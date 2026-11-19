@@ -11,7 +11,7 @@ statically, so the default demo bundle does not carry it.
 |---|---|---|
 | Contract | `src/adapter/{types,registry,provider}.ts(x)` | The adapter interface, the module-level registry, and `<OpenTradeChartProvider>` (query cache, stream bridge, boot) |
 | Terminal | `src/terminal/*`, `src/pages/trading/*` | Shared state (`TerminalProvider`), the default layout, and the panels |
-| Strategy Engine | `src/services/strategy/*`, `src/components/strategy/*` | OpenAlgo-based backtesting engine, built-in strategies, equity curves, trade logs, and chart overlays |
+| Strategy Engine | `src/services/strategy/*`, `src/components/strategy/*` | Quantitative backtesting engine, built-in strategies, equity curves, trade logs, and chart overlays |
 | Custom Data & IndexedDB | `src/services/customDataStore.ts`, `src/components/custom-data/*` | CSV parser, multi-timeframe resampler, IndexedDB persistence layer, and dataset manager |
 | Python Integration | `scripts/vite-plugin-*.ts`, `src/components/python/*` | Local indicators and strategy execution runners via Vite development middleware |
 | App root | `src/Root.tsx`, `src/adapterChoice.ts` | Picks demo, Binance or Hyperliquid from env; loads the last two lazily |

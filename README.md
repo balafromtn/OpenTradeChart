@@ -4,7 +4,7 @@
 
 **A professional, open-source web trading terminal with advanced charting, drawing tools, paper trading, custom CSV data imports, and strategy backtesting.**
 
-Interactive Candlestick Charts · Technical Indicators · Full Drawing Suite · Paper Trading Engine · Custom CSV Data Importer with IndexedDB Persistence · OpenAlgo Strategy Backtesting · Python Indicator & Strategy Engine
+Interactive Candlestick Charts · Technical Indicators · Full Drawing Suite · Paper Trading Engine · Custom CSV Data Importer with IndexedDB Persistence · Advanced Strategy Backtesting Engine · Python Indicator & Strategy Engine
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](NOTICE)
 [![Node](https://img.shields.io/badge/node-%E2%89%A520-brightgreen.svg)](https://nodejs.org)
@@ -22,7 +22,7 @@ Interactive Candlestick Charts · Technical Indicators · Full Drawing Suite · 
   - [3. Indicators & Custom Python Scripts](#3-indicators--custom-python-scripts)
   - [4. Built-in Paper Trading Engine](#4-built-in-paper-trading-engine)
   - [5. Custom CSV Import & Persistent Storage (IndexedDB)](#5-custom-csv-import--persistent-storage-indexeddb)
-  - [6. OpenAlgo Strategy Backtesting Engine](#6-openalgo-strategy-backtesting-engine)
+  - [6. Built-in Strategy & Backtesting Engine](#6-built-in-strategy--backtesting-engine)
 - [Adapters & Data Sources](#adapters--data-sources)
 - [Project Architecture](#project-architecture)
 - [Quick Start](#quick-start)
@@ -68,8 +68,8 @@ Interactive Candlestick Charts · Technical Indicators · Full Drawing Suite · 
 * **IndexedDB Client-Side Persistence**: Imported datasets are stored in browser IndexedDB, persisting reliably across tab refreshes, browser reboots, and storage cleanups.
 * **Dataset Management**: View, switch between, and delete imported datasets directly within the terminal UI.
 
-### 6. OpenAlgo Strategy Backtesting Engine
-OpenTradeChart integrates the quantitative backtesting architecture from **OpenAlgo**:
+### 6. Built-in Strategy & Backtesting Engine
+OpenTradeChart features an institutional-grade, zero-lookahead quantitative backtesting engine:
 * **Bar-Path Simulation Model**: Reconstructs realistic intra-bar price paths ($\text{Open} \to \text{Adverse} \to \text{Favourable} \to \text{Close}$). If both Stop Loss and Take Profit fall within the bar range, the adverse extreme is tested first to eliminate optimistic bias.
 * **Strict No-Lookahead Execution**: Signals generated on bar $i$ execute at bar $i+1$'s Open price adjusted by slippage.
 * **Cost & Friction Modeling**:
@@ -82,12 +82,12 @@ OpenTradeChart integrates the quantitative backtesting architecture from **OpenA
   * Maximum hold limit (exit after $N$ bars)
   * Position sizing (Fixed Quantity, % Equity, Fixed Cash)
 * **Built-in Strategies**:
-  * OpenAlgo EMA Crossover
-  * OpenAlgo Supertrend
-  * OpenAlgo RSI Mean Reversion
-  * OpenAlgo Bollinger Breakout
-  * OpenAlgo MACD Momentum
-  * Custom OpenAlgo Python Strategy
+  * EMA Crossover
+  * Supertrend Trend Following
+  * RSI Mean Reversion
+  * Bollinger Bands Breakout
+  * MACD Momentum
+  * Custom Python Strategy
 * **Performance Analytics & Curves**:
   * Net Profit (\$), Return (%), Benchmark Return (%)
   * Win Rate (%), Total Trades, Win / Loss Counts
@@ -155,7 +155,7 @@ Open `http://localhost:5173` in your browser to launch the terminal.
 
 The codebase maintains strict quality and reliability standards:
 * **Strict Type Safety**: Zero TypeScript compilation errors (`npm run typecheck`).
-* **Unit & Integration Tests**: Comprehensive Vitest coverage for indicators, paper trading engine, drawing mathematics, storage drivers, and the OpenAlgo backtest simulation engine.
+* **Unit & Integration Tests**: Comprehensive Vitest coverage for indicators, paper trading engine, drawing mathematics, storage drivers, and the backtest simulation engine.
 * **End-to-End Verification**: Playwright test suites covering terminal workflows, orders, and UI interactions.
 
 ---
